@@ -11,6 +11,7 @@ var methodOverride = require('method-override');
 //requiring the dotenv file and database.js
 require('dotenv').config();
 require('./config/database');
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
