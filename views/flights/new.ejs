@@ -2,7 +2,7 @@
 
 <!-- A form goes here which takes in all the required inputs needed -->
 
-<form action="'flights" method="POST">
+<form action="/flights" method="POST">
     <label>Airline:</label>
     <input type="text" name="airline">
     <label>Airport:</label>
@@ -11,7 +11,7 @@
     <input type="number" name="flightNo">
     <label>Departure Date:</label>
     <input type="date" name="departure">
-    <button>Submit</button>
+    <input type="submit" value="Add Flight">
 </form>
 
 <%- include('../partials/footer') %>
