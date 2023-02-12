@@ -5,6 +5,8 @@ var flightsCtrl = require('../controllers/flights');
 // Here, we define all the routes for the all flights page
 // On this page all the flights are displayed
 
+// ALl routes start with /flights
+
 router.get('/', flightsCtrl.index);
 
 module.exports = router;
