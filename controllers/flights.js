@@ -3,7 +3,7 @@ const Flight = require('../models/flight');
 module.exports = {
     index,
     new: newFlight,
-    create
+    create,
 };
 
 function index(req,res) {
