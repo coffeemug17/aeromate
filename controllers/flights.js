@@ -7,7 +7,7 @@ module.exports = {
 };
 
 function index(req,res) {
-    res.render('flights/index', {title: 'All Flights'});
+    res.render('flights/index', {title: 'All Flights', flights});
 }
 
 function newFlight(req,res) {
