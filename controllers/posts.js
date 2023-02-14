@@ -11,20 +11,21 @@ function index(req,res) {
     res.render('posts/index', {title: 'All Posts'});
 }
 
-function newPost(req,res) {
+function newPost(req, res) {
+    const airlineId = req.params.id;
     Post.findById(req.params.id)
     .populate('airline')
     .exec(function(err, post) {
-        Airline.findById(_id ,
-            function(err, airline) {
-                console.log(airline)
-                res.render(`posts/new/airlines/${airline._id}`, {
-                    title: 'New Post',
-                    post,
-                    airlines
-                });
-            }
-        );
+      Airline.findById(req.params.id,
+        function(err, airlines) {
+          console.log(airlines);
+          res.render(`posts/new`, {
+            title: 'Add a New Post',
+            post,
+            airlines
+          });
+        }
+      );
     });
 }
 

@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
 <form action="/posts/new/airlines/:id" method="POST">
+    <label>Airline Logo:</label>
+    <img src="<%= airlines.icon %>">
     <label>Airline:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" readonly="readonly" placeholder="<%= airlines.name %>">
     <label>Release Year:</label>
     <input type="text" name="releaseYear">
     <label>MPAA Rating</label>
@@ -13,8 +15,7 @@
     <option value="R">R</option>
     </select>
     <label>Now Showing:</label>
-    <input type="checkbox" name="nowShowing" checked>
-    <input type="submit" value="Add Movie">
+    <input type="submit" value="ADD POST!">
     
 </form>
 
