@@ -10,7 +10,8 @@ function search(req,res) {
 }
 
 function display(req,res) {
-    Airline.find({name: req.body.query}, function(err, airlines) {
+    const nameRegex = new RegExp(req.body.query);
+    Airline.find({name: {$regex: nameRegex, $options: 'i'}}, function(err, airlines) {
         console.log(airlines);
         res.render('search', {title: "Search Bar"});
     });
