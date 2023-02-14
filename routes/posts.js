@@ -13,4 +13,6 @@ router.get('/new', postsCtrl.new);
 
 router.post('/', postsCtrl.create);
 
+// router.get('')
+
 module.exports = router;
