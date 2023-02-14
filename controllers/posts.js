@@ -1,3 +1,4 @@
+const Airline = require('../models/airline');
 const Post = require('../models/post');
 
 module.exports = {
@@ -11,7 +12,20 @@ function index(req,res) {
 }
 
 function newPost(req,res) {
-    res.render('posts/new', {title: 'Add Post'});
+    Post.findById(req.params.id)
+    .populate('airline')
+    .exec(function(err, post) {
+        Airline.findById(_id ,
+            function(err, airline) {
+                console.log(airline)
+                res.render(`posts/new/airlines/${airline._id}`, {
+                    title: 'New Post',
+                    post,
+                    airlines
+                });
+            }
+        );
+    });
 }
 
 function create(req,res) {

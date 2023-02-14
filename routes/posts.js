@@ -10,10 +10,8 @@ var postsCtrl = require('../controllers/posts');
 
 router.get('/', postsCtrl.index);
 
-router.get('/new', postsCtrl.new);
+router.get('/new/airlines/:id', postsCtrl.new);
 
 router.post('/', postsCtrl.create);
-
-// router.get('')
 
 module.exports = router;
