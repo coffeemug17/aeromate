@@ -1,0 +1,11 @@
+<%- include('./partials/header') %>
+
+<!-- A search bar goes here which helps in searching for all the airlines available -->
+
+<form action="/search" method="POST">
+    <input type="text" placeholder="Enter the desired airlines" required name="query">
+    <button>Search Airlines</button>
+</form>
+
+
+<%- include('./partials/footer') %>
