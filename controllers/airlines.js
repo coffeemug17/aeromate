@@ -6,14 +6,14 @@ module.exports = {
 };
 
 function search(req,res) {
-    res.render('search', {title: "Search Bar"});
+    let airlines = 0;
+    res.render('search', {title: "Search Bar", airlines});
 }
 
 function display(req,res) {
     const nameRegex = new RegExp(req.body.query);
     Airline.find({name: {$regex: nameRegex, $options: 'i'}}, function(err, airlines) {
-        console.log(airlines);
-        res.render('search', {title: "Search Bar"});
+        res.render('search', {title: "Search Bar", airlines});
     });
     
 }

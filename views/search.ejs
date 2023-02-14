@@ -7,5 +7,38 @@
     <button>Search Airlines</button>
 </form>
 
+<% if (!airlines) { %>
+    <h5>No Airlines Selected Yet</h5>
+<% } else { %>
+    <table>
+        <thead>
+          <tr>
+            <th>Airline Logo</th>
+            <th>Airline</th>
+            <th>IATA Code</th>
+            <th>Home Country</th>
+            <th>Details</th>
+            <th>Post</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% airlines.forEach(function(a) { %>
+            <tr>
+              <td><img src="<%= a.icon %>""></td>  
+              <td><%= a.name %></td>
+              <td><%= a.iataCode %></td>
+              <td><%= a.homeCountry %></td>
+              <td><a href="/posts/<%=a._id%>">DETAILS</a></td>
+              <td><a href="/posts/new%>">POST</a></td>
+            </tr>
+          <% }); %>
+          <tr>
+            <td colspan="2"></td>
+          </tr>
+        </tbody>
+      </table>
+<% } %>
+
 
 <%- include('./partials/footer') %>
