@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<section id="show-page">
+    <div>Airline Logo: </div>
+    <div><img src="<%=airline.icon %>"></div>
+    <div>Airline Name: </div>
+    <div><%= airline.name %></div>
+    <div>IATA Code: </div>
+    <div><%= airline.iataCode %></div>
+    <div>Home Airport: </div>
+    <div><%= airline.homeAirport %></div>
+    <div>Home Country: </div>
+    <div><%= airline.homeCountry %></div>
+    <div>Airline Size: </div>
+    <div><%= airline.airlineSize %></div>
+    <div>Fleet Age: </div>
+    <div><%= airline.fleetAge %></div>
+    <div>Call Sign: </div>
+    <div><%= airline.callSign %></div>
+  </section>
+<%- include('../partials/footer') %>

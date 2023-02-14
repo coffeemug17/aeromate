@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var postsCtrl = require('../controllers/posts');
 
+
 // Here, we define all the routes for the all posts page
 // On this page all the posts are displayed
 
