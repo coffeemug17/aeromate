@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 
 module.exports = {
-    create
+    create,
 };
 
 function create(req, res) {
