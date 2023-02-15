@@ -14,4 +14,6 @@ router.get('/new/airlines/:id', postsCtrl.new);
 
 router.post('/', postsCtrl.create);
 
+router.get('/:id', postsCtrl.show);
+
 module.exports = router;

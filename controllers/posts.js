@@ -5,6 +5,7 @@ module.exports = {
     index,
     new: newPost,
     create,
+    show
 };
 
 function index(req,res) {
@@ -29,6 +30,12 @@ function create(req,res) {
         if (err) return res.redirect('/posts/new');
         console.log(post);
         res.redirect('/posts');
+    });
+}
+
+function show(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/show', {title: 'Post Details', post});
     });
 }
     // const airlineId = req.params.id;
