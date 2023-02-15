@@ -57,7 +57,8 @@ const postSchema = new Schema({
         required: true
     },
     userName: String,
-    userAvatar: String
+    userAvatar: String,
+    comments: [commentSchema]
 }, {
     timestamps: true
 });
