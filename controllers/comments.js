@@ -2,7 +2,8 @@ const Post = require('../models/post');
 
 module.exports = {
     create,
-    delete: deleteComment
+    delete: deleteComment,
+    update
 };
 
 function create(req, res) {
@@ -29,4 +30,15 @@ function deleteComment(req, res) {
             });
         }
     );
+}
+
+function update(req, res) {
+    Post.findOne({'comments._id': req.params.id}, function(err, post) {
+        const comment = post.comments.id(req.params.id);
+        comment.content = req.body.content;
+        comment.rating = req.body.rating;
+        post.save(function(err) {
+            res.redirect(`/posts/${post._id}`);
+        });
+    });
 }
