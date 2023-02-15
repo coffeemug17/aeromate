@@ -1,20 +1,29 @@
 <%- include('../partials/header') %>
 
-<form action="/posts/new/airlines/:id" method="POST">
+<form action="/posts" method="POST">
     <label>Airline Logo:</label>
-    <img src="<%= airlines.icon %>">
+    <img src="<%= airline.icon %>">
+    <input type="hidden" name="airlineName" value="<%= airline.name %>">
+    <input type="hidden" name="airlineIcon" value="<%= airline.icon %>">
+    <input type="hidden" name="airlineId" value="<%= airline._id %>">
     <label>Airline:</label>
-    <input type="text" name="name" readonly="readonly" placeholder="<%= airlines.name %>">
-    <label>Release Year:</label>
-    <input type="text" name="releaseYear">
-    <label>MPAA Rating</label>
-    <select name="mpaaRating">
-    <option value="G">G</option>
-    <option value="PG">PG</option>
-    <option value="PG-13">PG-13</option>
-    <option value="R">R</option>
+    <input type="text" name="airline" readonly="readonly" placeholder="<%= airline.name %>">
+    <label>Rating:</label>
+    <select name="rating">
+        <option value='1' >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
     </select>
-    <label>Now Showing:</label>
+    <label>Seat Legroom</label>
+    <select name="legRoom">
+        <option value="Extra Legroom">Extra Legroom</option>
+        <option value="Regular Legroom">Regular Legroom</option>
+        <option value="Less Legroom">Less Legroom</option>
+    </select>
+    <label>Comments:</label>
+    <input type="text" name="content">
     <input type="submit" value="ADD POST!">
     
 </form>
