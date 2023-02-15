@@ -1,5 +1,17 @@
 <%- include('../partials/header') %>
 
-
+<% posts.forEach(function(p) { %>
+    <br>
+    <section>
+        <div><img src="<%= p.userAvatar %>"></div>
+        <div><%= p.userName %></div>
+        <div><img src="<%= p.airlineIcon %>"></div>
+        <div><%= p.airlineName %></div>
+        <div><%= p.rating %></div>
+        <div><%= p.legRoom %></div>
+        <div><%= p.content %></div>
+    </section>
+    <br>
+<% }); %>
 
 <%- include('../partials/footer') %>
