@@ -1,2 +1,40 @@
 <%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>User Avatar: </div>
+    <div><img src="<%= post.userAvatar %>"></div>
+    <div>User Name: </div>
+    <div><%= post.userName %></div>
+    <div>Airline Name: </div>
+    <div><%= post.airlineName %></div>
+    <div>Airline Logo: </div>
+    <div><img src="<%= post.airlineIcon %>"</div>
+    <div>Legroom: </div>
+    <div><%= post.legRoom %></div>
+    <div>Rating: </div>
+    <div><%= post.rating %></div>
+    <div>Review: </div>
+    <div><%= post.content %></div>
+</section>
+
+<br><br><h2>Comments</h2>
+<% if (user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/posts/<%= post._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Comment">
+  </form>
+<% } %>
+
+
+
 <%- include('../partials/footer') %>
