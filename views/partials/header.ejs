@@ -3,21 +3,21 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
   </head>
-  <body>
-    
-    <h1><%= title %></h1>
-    <nav>
-        <img src="/images/flight.jpg">
-        <a href="/">HOME</a>
+  <body class="bg-image">
+    <nav class="nav nav-pills nav-fill">
+      <img class="img-thumbnail" src="/images/flight.jpg">
+      <a class="nav-item nav-link badge badge-primary" href="/">HOME</a>
+      |
+      <a class="nav-item nav-link badge badge-primary" href="/posts" <%- title === 'All Posts' ? 'class="active"' : '' %>>ALL POSTS</a>
+      |
+      <% if (user) { %>
+        <a class="nav-item nav-link badge badge-primary" href="/search" <%- title === 'Search Airlines' ? 'class="active"' : '' %>>SEARCH AIRLINES</a>
         |
-        <a href="/posts" <%- title === 'All Posts' ? 'class="active"' : '' %>>ALL POSTS</a>
-        |
-        <% if (user) { %>
-          <a href="/search" <%- title === 'Search Airlines' ? 'class="active"' : '' %>>SEARCH AIRLINES</a>
-          |
-          <a href="/logout">LOG OUT</a>
+        <a class="nav-item nav-link badge badge-primary" href="/logout"><img class="img-thumbnail" src="<%=user.avatar%>">&nbsp;LOG OUT</a>
         <% } else { %>
-          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
-      </nav>
+          <a class="nav-item nav-link login badge badge-primary" href="/auth/google" class="login"><img class="img-thumbnail" src="https://i.imgur.com/FHjYyi0.png">&nbsp;LOG IN</a>
+          <% } %>
+        </nav>
+    <h1><%= title %></h1>

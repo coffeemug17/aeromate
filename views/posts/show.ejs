@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
+<section id="show-page" class="container">
     <div>User Avatar: </div>
-    <div><img src="<%= post.userAvatar %>"></div>
+    <div><img class="img-thumbnail" src="<%= post.userAvatar %>"></div>
     <div>User Name: </div>
     <div><%= post.userName %></div>
     <div>Airline Name: </div>
     <div><%= post.airlineName %></div>
     <div>Airline Logo: </div>
-    <div><img src="<%= post.airlineIcon %>"</div>
+    <div><img class="img-thumbnail" src="<%= post.airlineIcon %>"</div>
     <div>Legroom: </div>
     <div><%= post.legRoom %></div>
     <div>Rating: </div>
@@ -20,7 +20,7 @@
 <br><br><h2>Comments</h2>
 
 <% if (post.comments.length) { %>
-    <table>
+    <table colspan="2" class="table table-dark table-bordered">
       <thead>
         <tr>
           <th>User</th>
@@ -33,13 +33,13 @@
       <tbody>
         <% post.comments.forEach(function(c) { %>
           <tr>
-            <td class="comment-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= c.userName %></td>
+            <td class="review-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= c.userName %></td>
             <td><%= c.createdAt.toLocaleDateString() %></td>
             <td><%= c.content %></td>
             <td><%= c.rating %></td>
             <td>
                 <% if (user?._id.equals(c.user)) { %>
-                  <form action="/comments/<%= c._id %>?_method=DELETE" method='POST'>
+                  <form class ="form-control" action="/comments/<%= c._id %>?_method=DELETE" method='POST'>
 
                     <button type="submit">Delete </button>
                   </form>
@@ -51,14 +51,14 @@
                         <label>Content</label>
                         <input type="text" name="content" value="<%= c.content %>">
                         <label>rating</label>
-                        <select name="rating" value="<%= c.rating %>">
+                        <select name="rating" value="<%= c.rating %>" class="input-group-text">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5" selected>5</option>
                           </select>
-                        <button type="submit">Update Comment</button>
+                        <button type="submit" >Update Comment</button>
                     </form>
                   <% } %>
             </td>
@@ -79,7 +79,7 @@
   <form id="add-comment-form" method="POST"
     action="/posts/<%= post._id %>/comments">
     <label>Comment:</label>
-    <textarea name="content"></textarea>
+    <textarea name="content" class="input-group-text"></textarea>
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -88,7 +88,7 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
-    <input type="submit" value="Add Comment">
+    <input type="submit" value="Add Comment" class="input-group-text">
   </form>
 <% } %>
 

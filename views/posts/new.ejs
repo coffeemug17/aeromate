@@ -1,30 +1,30 @@
 <%- include('../partials/header') %>
 
-<form action="/posts" method="POST">
-    <label>Airline Logo:</label>
+<form class ="form-control-lg form-control-color" action="/posts" method="POST">
     <img src="<%= airline.icon %>">
     <input type="hidden" name="airlineName" value="<%= airline.name %>">
     <input type="hidden" name="airlineIcon" value="<%= airline.icon %>">
     <input type="hidden" name="airlineId" value="<%= airline._id %>">
     <label>Airline:</label>
-    <input type="text" name="airline" readonly="readonly" placeholder="<%= airline.name %>">
+    <input class="input-group-text" type="text" name="airline" readonly="readonly" placeholder="<%= airline.name %>">
     <label>Rating:</label>
-    <select name="rating">
-        <option value='1' >1</option>
+    <select name="rating" class="input-group-text">
+        <option value='1'>1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
     <label>Seat Legroom</label>
-    <select name="legRoom">
+    <select name="legRoom" class="input-group-text">
         <option value="Extra Legroom">Extra Legroom</option>
         <option value="Regular Legroom">Regular Legroom</option>
         <option value="Less Legroom">Less Legroom</option>
     </select>
     <label>Comments:</label>
-    <input type="text" name="content">
-    <input type="submit" value="ADD POST!">
+    <input type="text" name="content" class="input-group-text">
+    <br>
+    <input type="submit" class="input-group-text" value="ADD POST!">
     
 </form>
 

@@ -1,9 +1,58 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://i.imgur.com/mkeeMZj.jpg");
+  background-position:center top ;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
-a {
-  color: #00B7FF;
+nav > .badge{
+  font-size: large;
+}
+body > nav {
+  align-items: center;
+}
+body > nav {
+  grid-area: nav;
+  background: #000;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(231, 231, 231, .3) 22.39%, rgba(209, 209, 209,  100) 42.6%, rgba(182, 182, 182, .3) 79.19%, rgba(156, 156, 156, 100) 104.86%);
+  display: flex;
+  border-radius: 4%;
+  justify-content: flex-end;
+  align-items: center;
+  height: 12vh ;
+  padding: 0 20px 0 30px;
 }
 
+nav > img {
+  width: 150px;
+  object-fit: contain;
+  margin-right: auto;
+  margin-left: 20px;
+}
+nav > a > .img-thumbnail{
+  width: 50px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+.login img {
+  height: 30px;
+  border-radius: 50%;
+}
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}

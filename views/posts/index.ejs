@@ -2,17 +2,25 @@
 
 <% posts.forEach(function(p) { %>
     <br>
-    <section>
-        <div><img src="<%= p.userAvatar %>"></div>
-        <div><%= p.userName %></div>
-        <div><img src="<%= p.airlineIcon %>"></div>
-        <div><%= p.airlineName %></div>
-        <div><%= p.rating %></div>
-        <div><%= p.legRoom %></div>
-        <div><%= p.content %></div>
-        <% if (user) { %>
-            <div><a href="/posts/<%= p._id %>">Post Details</a></div>
-        <% } %>
+    <section class="container">
+        <div class="row">
+            <div class="col-10">
+                <div><img src="<%= p.userAvatar %>"></div>
+                <div><%= p.userName %></div>
+            </div>
+            <div class="col-3">
+                <div><img src="<%= p.airlineIcon %>"></div>
+                <div><%= p.airlineName %></div>
+            </div>
+            <div class="col-10">
+                <div><%= p.rating %></div>
+                <div><%= p.legRoom %></div>
+                <div><%= p.content %></div>
+                <% if (user) { %>
+                    <div><a href="/posts/<%= p._id %>">Post Details</a></div>
+                <% } %>
+            </div>
+        </div>
     </section>
     <br>
 <% }); %>
