@@ -2,9 +2,9 @@
 
 <!-- A search bar goes here which helps in searching for all the airlines available -->
 
-<form action="/search" method="POST">
-    <input type="text" placeholder="Enter the desired airlines" required name="query">
-    <button>Search Airlines</button>
+<form class="search-form" action="/search" method="POST">
+    <input class="input-group-text" type="text" placeholder="Enter the desired airlines" required name="query">
+    <button class="btn btn-dark">Search Airlines</button>
 </form>
 
 <% if (!airlines) { %>

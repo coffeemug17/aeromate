@@ -18,7 +18,7 @@ body > main {
   justify-content: center;
   align-items: flex-start;
 }
-body > main > h1, h2 , h5 {
+body > main > h1, h2 , h4, h5 {
   display: flex;
   justify-content: center;
   padding: 30px;
@@ -37,7 +37,7 @@ body > main > h1, h2 , h5 {
 }
 #index-page {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2vh;
   width: 40vw;
   justify-content: center;
@@ -53,25 +53,41 @@ body > main > h1, h2 , h5 {
   justify-content: center;
   align-items: center;
   grid-column-start: 2;
-  grid-column-start: 3;
+}
+.index-page-review > div {
+  display: grid;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: 10%;
 }
 
-#index-page > div > div.user {
+#index-page > div.user {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 10px;
 }
 
-#index-page > div > div.user > .username {
+#index-page > div.user > .username {
   display: grid;
   justify-content: flex-start;
   align-items: center;
 }
-#index-page > div > div.user > .userimg img{
+#index-page > div.user > .userimg img{
   border-radius: 50%;
   padding-right: 10px;
 }
-
+#index-page > div > a  {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: aliceblue;
+  border-radius: 15%;
+  color: salmon;
+}
+#index-page > div > a:hover {
+  color: blue;
+}
 .line {
   opacity: 1;
 }
@@ -117,15 +133,14 @@ body > nav {
 }
 body > nav {
   grid-area: nav;
-  background: #000;
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(231, 231, 231, .3) 22.39%, rgba(209, 209, 209,  100) 42.6%, rgba(182, 182, 182, .3) 79.19%, rgba(156, 156, 156, 100) 104.86%);
+  background: darkgray;
+  opacity: 0.7;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 12vh ;
   padding: 0 20px 0 30px;
 }
-
 nav > img {
   width: 150px;
   object-fit: contain;
@@ -169,4 +184,8 @@ nav > a > .img-thumbnail{
 .table-content > tr > td{
   text-align: center;
   opacity: 0.95;
+}
+.search-form {
+  display:grid;
+  grid-template-columns: auto auto;
 }

@@ -31,10 +31,15 @@
             <th>Date</th>
             <th>Comment</th>
             <th>Rating</th>
+            <% let counter = 0; %>
             <% post.comments.forEach(function(c) { %>
-                <% if (user?._id.equals(c.user)) { %>
+                <% if (user?._id.equals(c.user) && !counter) { %>
+                    <% counter++; %>
                     <th>Delete</th>
                     <th>Update Comment?</th>
+                <% } %>
+                <% if (counter === 1) { %>
+                    <% return; %>
                 <% } %>
             <% }); %>
         </tr>
@@ -84,8 +89,8 @@
 
 <hr class="line">
 
-<h2>Add Comments</h2>
 <% if (user) { %>
+  <h2>Add Comments</h2>
   <form id="add-comment-form" class="add-comment" method="POST"
     action="/posts/<%= post._id %>/comments">
     <label>Comment:</label>
