@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-
-<form class ="form-control-lg form-control-color" action="/posts" method="POST">
-    <img class ="rounded mx-auto d-block"src="<%= airline.icon %>">
+<hr>
+<form class ="form-control-lg  new-post-form" action="/posts" method="POST">
+    <img class ="img-thumbnail"src="<%= airline.icon %>">
     <input type="hidden" name="airlineName" value="<%= airline.name %>">
     <input type="hidden" name="airlineIcon" value="<%= airline.icon %>">
     <input type="hidden" name="airlineId" value="<%= airline._id %>">
@@ -25,7 +25,6 @@
     <input type="text" name="content" class="input-group-text">
     <br>
     <input type="submit" class="input-group-text" value="ADD POST!">
-    
 </form>
 
 <%- include('../partials/footer') %>

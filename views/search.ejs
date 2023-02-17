@@ -1,41 +1,37 @@
 <%- include('./partials/header') %>
 
 <!-- A search bar goes here which helps in searching for all the airlines available -->
-
+<hr>
 <form class="search-form" action="/search" method="POST">
     <input class="input-group-text" type="text" placeholder="Enter the desired airlines" required name="query">
     <button class="btn btn-dark">Search Airlines</button>
 </form>
-
+<br>
 <% if (!airlines) { %>
     <h5>No Airlines Selected Yet</h5>
 <% } else { %>
-    <table>
+    <table class="search-table table table-dark table-bordered">
         <thead>
           <tr>
             <th>Airline Logo</th>
             <th>Airline</th>
             <th>IATA Code</th>
             <th>Home Country</th>
-            <th>Details</th>
-            <th>Post</th>
-            <th></th>
+            <th>Airline Details</th>
+            <th>Make a Post!</th>
           </tr>
         </thead>
         <tbody>
           <% airlines.forEach(function(a) { %>
             <tr>
-              <td><img src="<%= a.icon %>""></td>  
+              <td><img class="img-thumbnail" src="<%= a.icon %>""></td>  
               <td><%= a.name %></td>
               <td><%= a.iataCode %></td>
               <td><%= a.homeCountry %></td>
-              <td><a href="/airlines/<%=a._id%>">DETAILS</a></td>
-              <td><a href="/posts/new/airlines/<%=a._id%>">POST</a></td>
+              <td><a class="search-link" href="/airlines/<%=a._id%>">DETAILS</a></td>
+              <td><a class="search-link" href="/posts/new/airlines/<%=a._id%>">POST</a></td>
             </tr>
           <% }); %>
-          <tr>
-            <td colspan="2"></td>
-          </tr>
         </tbody>
       </table>
 <% } %>
