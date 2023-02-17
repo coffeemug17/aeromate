@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <form class ="form-control-lg form-control-color" action="/posts" method="POST">
-    <img src="<%= airline.icon %>">
+    <img class ="rounded mx-auto d-block"src="<%= airline.icon %>">
     <input type="hidden" name="airlineName" value="<%= airline.name %>">
     <input type="hidden" name="airlineIcon" value="<%= airline.icon %>">
     <input type="hidden" name="airlineId" value="<%= airline._id %>">

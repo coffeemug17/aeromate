@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<hr class="line">
+
 <section id="show-page" class="container">
     <div>User Avatar: </div>
     <div><img class="img-thumbnail" src="<%= post.userAvatar %>"></div>
@@ -8,7 +10,7 @@
     <div>Airline Name: </div>
     <div><%= post.airlineName %></div>
     <div>Airline Logo: </div>
-    <div><img class="img-thumbnail" src="<%= post.airlineIcon %>"</div>
+    <div><img class="img-thumbnail" src="<%= post.airlineIcon %>"></div>
     <div>Legroom: </div>
     <div><%= post.legRoom %></div>
     <div>Rating: </div>
@@ -17,40 +19,50 @@
     <div><%= post.content %></div>
 </section>
 
-<br><br><h2>Comments</h2>
+<hr class="line">
+
+<h2>Comments</h2>
 
 <% if (post.comments.length) { %>
     <table colspan="2" class="table table-dark table-bordered">
-      <thead>
+      <thead class="table-heading">
         <tr>
-          <th>User</th>
-          <th>Date</th>
-          <th>Comment</th>
-          <th>Rating</th>
-          <th></th>
+            <th>User</th>
+            <th>Date</th>
+            <th>Comment</th>
+            <th>Rating</th>
+            <% post.comments.forEach(function(c) { %>
+                <% if (user?._id.equals(c.user)) { %>
+                    <th>Delete</th>
+                    <th>Update Comment?</th>
+                <% } %>
+            <% }); %>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-content">
         <% post.comments.forEach(function(c) { %>
           <tr>
-            <td class="review-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= c.userName %></td>
+            <td>
+                <div class="comment-user">
+                    <img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"> <%= c.userName %>
+                </div>
+            </td>
             <td><%= c.createdAt.toLocaleDateString() %></td>
             <td><%= c.content %></td>
             <td><%= c.rating %></td>
-            <td>
-                <% if (user?._id.equals(c.user)) { %>
-                  <form class ="form-control" action="/comments/<%= c._id %>?_method=DELETE" method='POST'>
-
-                    <button type="submit">Delete </button>
+            <% if (user?._id.equals(c.user)) { %>
+                <td>
+                  <form class ="form-control" id="delete-btn" action="/comments/<%= c._id %>?_method=DELETE" method='POST'>
+                    <button class="btn btn-danger" type="submit">Delete </button>
                   </form>
-                <% } %>
-            </td>
-            <td>
-                <% if (user?._id.equals(c.user)) { %>
-                    <form action="/comments/<%= c._id %>?_method=PUT" method='POST'>
+                </td>
+            <% } %>
+            <% if (user?._id.equals(c.user)) { %>
+                <td>
+                    <form id="add-comment-form" action="/comments/<%= c._id %>?_method=PUT" method='POST'>
                         <label>Content</label>
                         <input type="text" name="content" value="<%= c.content %>">
-                        <label>rating</label>
+                        <label>Rating</label>
                         <select name="rating" value="<%= c.rating %>" class="input-group-text">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -58,37 +70,35 @@
                             <option value="4">4</option>
                             <option value="5" selected>5</option>
                           </select>
-                        <button type="submit" >Update Comment</button>
+                        <button class="btn btn-warning" type="submit" >Update Comment</button>
                     </form>
-                  <% } %>
-            </td>
+                </td>
+            <% } %>
           </tr>
         <% }); %>
-        <tr>
-          <td colspan="2"></td>
-        </tr>
       </tbody>
     </table>
   <% } else { %>
     <h5>No Comments Yet</h5>
   <% } %>
 
+<hr class="line">
 
-<br><br><h2>Add Comments</h2>
+<h2>Add Comments</h2>
 <% if (user) { %>
-  <form id="add-comment-form" method="POST"
+  <form id="add-comment-form" class="add-comment" method="POST"
     action="/posts/<%= post._id %>/comments">
     <label>Comment:</label>
     <textarea name="content" class="input-group-text"></textarea>
     <label>Rating:</label>
-    <select name="rating">
+    <select name="rating" class="input-group-text">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
-    <input type="submit" value="Add Comment" class="input-group-text">
+    <input type="submit" value="Add Comment" class="input-group-text add-comment-button">
   </form>
 <% } %>
 

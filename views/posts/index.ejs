@@ -2,24 +2,22 @@
 
 <% posts.forEach(function(p) { %>
     <br>
-    <section class="container">
-        <div class="row">
-            <div class="col-10">
-                <div><img src="<%= p.userAvatar %>"></div>
-                <div><%= p.userName %></div>
+    <section class="container" id="index-page">
+        <div>
+            <div class="user">
+                <div class="userimg"><img src="<%= p.userAvatar %>"></div>
+                <div class="username"><%= p.userName %></div>
             </div>
-            <div class="col-3">
-                <div><img src="<%= p.airlineIcon %>"></div>
-                <div><%= p.airlineName %></div>
-            </div>
-            <div class="col-10">
+            <div class="index-page-review">
                 <div><%= p.rating %></div>
                 <div><%= p.legRoom %></div>
                 <div><%= p.content %></div>
-                <% if (user) { %>
-                    <div><a href="/posts/<%= p._id %>">Post Details</a></div>
-                <% } %>
             </div>
+            <div>
+                <div><img class="img-thumbnail" src="<%= p.airlineIcon %>"></div>
+                <div><%= p.airlineName %></div>
+            </div>
+            <div><a href="/posts/<%= p._id %>">Post Details</a></div>
         </div>
     </section>
     <br>

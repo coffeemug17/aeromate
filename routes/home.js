@@ -5,7 +5,7 @@ const airlinesCtrl = require('../controllers/airlines');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Home Page' });
+  res.render('home', { title: ' Welcome to AeroMate!' });
 });
 
 router.get('/search', airlinesCtrl.search);
