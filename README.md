@@ -1,5 +1,5 @@
 # AeroMate
-AeroMate is a CRUD-based web application that allows users to share their favorite airlines and exchange their thoughts with other aviation enthusiasts. Users can create, read, update, and delete posts on the app. Additionally, users can comment on posts and edit or delete their own comments if they are logged in through Google OAuth. The application also makes use of Flight Labs API and Daisycon API for airline information.
+AeroMate is a CRUD-based web application that allows users to share their favorite airlines and exchange their thoughts with other aviation enthusiasts. Users can create and read posts on the app. Additionally, users can comment on posts and edit or delete their own comments if they are logged in through Google OAuth. The application also makes use of Flight Labs API and Daisycon API for airline information.
 
 ## Screenshot(s)
 - Home Page
@@ -34,6 +34,7 @@ AeroMate is a CRUD-based web application that allows users to share their favori
 ## Next Steps
 - Adding filter functionalities when searching for the airline (icebox items)
 - Improving the UI/UX by improved styling and adding pagination to handle larger datasets (icebox items)
+- Adding edit and delete post functionality (icebox items)
 - Bug fixes
 
 ## Contributing
