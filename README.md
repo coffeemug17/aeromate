@@ -3,11 +3,17 @@ AeroMate is a CRUD-based web application that allows users to share their favori
 
 ## Screenshot(s)
 - Home Page
+![Home Page](https://i.imgur.com/ZohVsOk.png)
 - All Posts Page
+![All Posts Page](https://i.imgur.com/elYohAZ.png)
 - Search Airlines Page
+![Search Airlines Page](https://i.imgur.com/Gmw6jzK.png)
 - Airline Detail Page
+![Airline Detail Page](https://i.imgur.com/hXu93Su.png)
 - New Post Page
+![New Post Page](https://i.imgur.com/GQhhnua.png)
 - Post Details Page
+![Post Details Page](https://i.imgur.com/Hd6rd39.png)
 ## Technologies Used
 - JavaScript
 - HTML
