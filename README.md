@@ -29,7 +29,7 @@ AeroMate is a CRUD-based web application that allows users to share their favori
 - Heroku
 
 ## Getting Started
-- [Link to deployed game](https://aeromate.herokuapp.com/)
+- [Link to deployed app](https://aeromate.herokuapp.com/)
 
 ## Next Steps
 - Adding filter functionalities when searching for the airline (icebox items)
